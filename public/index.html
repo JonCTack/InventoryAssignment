@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventory</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
 </head>
 <body>
-    
-</body>
+    <nav id="navbar">
+        <h1>Add Items</h1>
+        <h1 id="display-items">Display Items</h1>
+        <h1 id="change-items">Change Inventory</h1>
+    </nav>
+    <div id="container">
+        <div class="inputcontain">
+            <label for="name-i"> Name of Product </label>
+            <input type="text" id="name-i">
+        </div>
+        <div class="inputcontain">
+            <label for="price-i"> Price of Product </label>
+            <input type="number" id="price-i">
+        </div>
+        <div class="inputcontain">
+            <label for="inv-i"> Inventory of Product </label>
+            <input type="number" id="inv-i">
+        </div>
+        <div class="inputcontain">
+            <label for="date-i"> Next Delivery Date </label>
+            <input type="date" id="date-i">
+        </div>
+        <div class="inputcontain">
+            <label for="delivery-i"> Amount to be Delivered </label>
+            <input type="number" id="delivery-i">
+        </div>
+        <button id="send-item">Add Product to Inventory</button>
+    </div>
+    <p id="upload-status"></p>
+    </body>
 </html>

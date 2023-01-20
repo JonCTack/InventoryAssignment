@@ -25,10 +25,21 @@ mongoose.connection.once('open', ()=> {
 });
 
 
-app.post("/create_items", (req, res) => {
-    console.log(req.body)
-    TheItems.create(req.body)
-    res.send("creation successful")
+app.post("/create_items", async (req, res) => {
+    let returnedVal = await TheItems.create({
+        name: req.body.nameString,
+        price: req.body.priceNum,
+        inventory: req.body.invNum,
+        nextDelivery: req.body.dateVal,
+        deliveryAmt: req.body.deliveryNum
+    })
+    console.log(returnedVal)
+    res.send(returnedVal)
+})
+
+app.get('/items', async (req, res)=>{
+    let response = await TheItems.find({});
+    res.json(response)
 })
 
 app.listen(port, () => {
